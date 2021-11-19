@@ -44,6 +44,34 @@
             </objects>
             <point key="canvasLocation" x="750" y="-320"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="Rmo-EM-vNJ">
+            <objects>
+                <viewController id="KVJ-nj-eu0" customClass="ThirdViewController" customModule="_3_Coding" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lp3-hV-2th">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Third View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="3nm-BY-0Yw">
+                                <rect key="frame" x="106" y="384.66666666666669" width="163" height="43"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KuH-dl-ccO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3nm-BY-0Yw" firstAttribute="centerX" secondItem="Lp3-hV-2th" secondAttribute="centerX" id="AV8-mh-bRg"/>
+                            <constraint firstItem="3nm-BY-0Yw" firstAttribute="centerY" secondItem="Lp3-hV-2th" secondAttribute="centerY" id="qic-9j-CcB"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="4Bb-Lz-tEW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="reT-4f-d8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="1261"/>
+        </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -91,6 +119,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="KVJ-nj-eu0" kind="relationship" relationship="viewControllers" id="9DT-FF-TaJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

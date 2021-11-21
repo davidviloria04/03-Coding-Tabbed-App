@@ -43,17 +43,31 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DXU-1l-FdB">
+                                <rect key="frame" x="30" y="220.66666666666666" width="315" height="42.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Validar datos">
+                                    <fontDescription key="titleFontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="validateData:" destination="9pv-A4-QxB" eventType="touchUpInside" id="thF-Cu-ZI7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
                             <constraint firstItem="kOy-Vw-lQM" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="0Tr-nG-Oml"/>
+                            <constraint firstItem="DXU-1l-FdB" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="AgK-Ge-mi0"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="DXU-1l-FdB" secondAttribute="trailing" constant="30" id="BKO-UB-D3u"/>
                             <constraint firstItem="jgs-fH-GXm" firstAttribute="top" secondItem="kOy-Vw-lQM" secondAttribute="bottom" constant="50" id="Eik-Cx-ETa"/>
                             <constraint firstItem="jgs-fH-GXm" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="Pzu-Hc-Xzb"/>
+                            <constraint firstItem="DXU-1l-FdB" firstAttribute="top" secondItem="jgs-fH-GXm" secondAttribute="bottom" constant="50" id="RFl-pm-owS"/>
                             <constraint firstItem="kOy-Vw-lQM" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="bEe-EN-crS"/>
                             <constraint firstItem="kOy-Vw-lQM" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="10" id="dUG-b3-5l7"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="kOy-Vw-lQM" secondAttribute="trailing" constant="20" id="jj9-wG-pla"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="jgs-fH-GXm" secondAttribute="trailing" constant="20" id="tgj-rR-jXL"/>
+                            <constraint firstItem="DXU-1l-FdB" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="30" id="uyj-Y9-cut"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
@@ -152,7 +166,7 @@ VGhpcmQQEA
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>

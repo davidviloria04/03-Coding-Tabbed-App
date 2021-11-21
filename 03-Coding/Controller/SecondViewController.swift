@@ -21,7 +21,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         
         if let theNumber = textField.text {
-            ("Has ingresado el numero \(theNumber) es correcto")
+            print("Has ingresado el numero \(theNumber) es correcto?")
         }
         
         return true

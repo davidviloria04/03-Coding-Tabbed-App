@@ -8,11 +8,23 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //Cerramos el teclado
+        textField.resignFirstResponder()
+        
+        if let theNumber = textField.text {
+            ("Has ingresado el numero \(theNumber) es correcto")
+        }
+        
+        return true
     }
 
 

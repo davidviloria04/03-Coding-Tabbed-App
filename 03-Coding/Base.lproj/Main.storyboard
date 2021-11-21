@@ -17,34 +17,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="112.66666666666669" y="384.66666666666669" width="150" height="43"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by FirstViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                <rect key="frame" x="90.666666666666686" y="435.66666666666669" width="194" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduce tu nombre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kOy-Vw-lQM">
+                                <rect key="frame" x="20" y="54" width="335" height="35.333333333333343"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="hn1-OK-jbW"/>
+                                </connections>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jgs-fH-GXm">
+                                <rect key="frame" x="20" y="139.33333333333334" width="335" height="31.333333333333343"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="18" minValue="14" maxValue="90" translatesAutoresizingMaskIntoConstraints="NO" id="O1z-DQ-QFH">
+                                        <rect key="frame" x="-2" y="0.66666666666665719" width="305.66666666666669" height="31"/>
+                                        <color key="minimumTrackTintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="sliderAgeMoved:" destination="9pv-A4-QxB" eventType="valueChanged" id="Dkz-vC-PbM"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgG-sJ-KQv">
+                                        <rect key="frame" x="309.66666666666669" y="0.0" width="25.333333333333314" height="31.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="6BV-lF-sBN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" symbolic="YES" id="cfb-er-3JN"/>
-                            <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="KQZ-1w-vlD" secondAttribute="centerX" id="e1l-AV-tCB"/>
-                            <constraint firstAttribute="centerY" secondItem="KQZ-1w-vlD" secondAttribute="centerY" id="exm-UA-ej4"/>
+                            <constraint firstItem="kOy-Vw-lQM" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="0Tr-nG-Oml"/>
+                            <constraint firstItem="jgs-fH-GXm" firstAttribute="top" secondItem="kOy-Vw-lQM" secondAttribute="bottom" constant="50" id="Eik-Cx-ETa"/>
+                            <constraint firstItem="jgs-fH-GXm" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="Pzu-Hc-Xzb"/>
+                            <constraint firstItem="kOy-Vw-lQM" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="bEe-EN-crS"/>
+                            <constraint firstItem="kOy-Vw-lQM" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="10" id="dUG-b3-5l7"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="kOy-Vw-lQM" secondAttribute="trailing" constant="20" id="jj9-wG-pla"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="jgs-fH-GXm" secondAttribute="trailing" constant="20" id="tgj-rR-jXL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="labelAge" destination="TgG-sJ-KQv" id="yTV-jQ-rha"/>
+                        <outlet property="sliderAge" destination="O1z-DQ-QFH" id="Rur-7l-Whf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241378"/>
         </scene>
-        <!--Item-->
+        <!--Third  -->
         <scene sceneID="Rmo-EM-vNJ">
             <objects>
                 <viewController id="KVJ-nj-eu0" customClass="ThirdViewController" customModule="_3_Coding" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,11 +88,15 @@
                             <constraint firstItem="3nm-BY-0Yw" firstAttribute="centerY" secondItem="Lp3-hV-2th" secondAttribute="centerY" id="qic-9j-CcB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="4Bb-Lz-tEW"/>
+                    <tabBarItem key="tabBarItem" image="folder.fill" catalog="system" id="4Bb-Lz-tEW">
+                        <string key="title" base64-UTF8="YES">
+VGhpcmQQEA
+</string>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="reT-4f-d8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="1261"/>
+            <point key="canvasLocation" x="750" y="1054"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -91,12 +117,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Inngresa tu numero" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZv-pL-FvA">
+                                <rect key="frame" x="20" y="244.00000000000003" width="335" height="35.333333333333343"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="continue" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="1uc-ik-iH3"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
+                            <constraint firstItem="aZv-pL-FvA" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="6s8-kP-FZj"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
                             <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
+                            <constraint firstItem="aZv-pL-FvA" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="Obq-mx-fMD"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="aZv-pL-FvA" secondAttribute="trailing" constant="20" id="Po4-vB-lQC"/>
+                            <constraint firstItem="aZv-pL-FvA" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="200" id="bYy-Ge-Xac"/>
                             <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
@@ -129,7 +167,11 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="folder.fill" catalog="system" width="128" height="97"/>
         <image name="second" width="30" height="30"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

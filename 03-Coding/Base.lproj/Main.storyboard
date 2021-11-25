@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -120,44 +119,92 @@ VGhpcmQQEA
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="zEq-FU-wV5">
-                                <rect key="frame" x="86.666666666666686" y="384.66666666666669" width="202" height="43"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="NbF-8z-GCi">
+                                <rect key="frame" x="85" y="183.66666666666666" width="205" height="32"/>
+                                <subviews>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minimumValue="2" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Mf8-xt-mjk">
+                                        <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
+                                        <color key="tintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="stepperPresedd:" destination="8rJ-Kc-sve" eventType="valueChanged" id="yKI-6g-SiB"/>
+                                        </connections>
+                                    </stepper>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xB-lk-WXs">
+                                        <rect key="frame" x="123" y="0.0" width="82" height="32"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selecciona cuantos numeros en la sucesión de Fibonacci quieres ver" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkB-vF-Kyj">
+                                <rect key="frame" x="20" y="74" width="335" height="59.666666666666657"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cac-FN-3b4">
+                                <rect key="frame" x="25" y="245.66666666666666" width="325" height="399.33333333333337"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="80" y="435.66666666666669" width="215" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Inngresa tu numero" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZv-pL-FvA">
-                                <rect key="frame" x="20" y="244.00000000000003" width="335" height="35.333333333333343"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="continue" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
-                                <connections>
-                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="1uc-ik-iH3"/>
-                                </connections>
-                            </textField>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="ox1-vA-9gB">
+                                <rect key="frame" x="20" y="682" width="335" height="32"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aJU-GB-88J">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="32"/>
+                                        <color key="onTintColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchMoved:" destination="8rJ-Kc-sve" eventType="valueChanged" id="o5R-iL-I35"/>
+                                        </connections>
+                                    </switch>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver numero de oro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HH-18-iPx">
+                                        <rect key="frame" x="70" y="0.0" width="265" height="32"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="eqB-aI-4I5"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
-                            <constraint firstItem="aZv-pL-FvA" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="6s8-kP-FZj"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="top" secondItem="zEq-FU-wV5" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-4N-Vmt"/>
-                            <constraint firstItem="NDk-cv-Gan" firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="JgO-Fn-dHn"/>
-                            <constraint firstItem="aZv-pL-FvA" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="Obq-mx-fMD"/>
-                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="aZv-pL-FvA" secondAttribute="trailing" constant="20" id="Po4-vB-lQC"/>
-                            <constraint firstItem="aZv-pL-FvA" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="200" id="bYy-Ge-Xac"/>
-                            <constraint firstAttribute="centerX" secondItem="zEq-FU-wV5" secondAttribute="centerX" id="qqM-NS-xev"/>
-                            <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
+                            <constraint firstItem="gkB-vF-Kyj" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" constant="30" id="4ui-kR-ccz"/>
+                            <constraint firstItem="Cac-FN-3b4" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="25" id="F26-g1-Jc6"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="ox1-vA-9gB" secondAttribute="trailing" constant="20" id="FAb-QC-CHK"/>
+                            <constraint firstItem="gkB-vF-Kyj" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="HwZ-EG-ZdU"/>
+                            <constraint firstItem="Cac-FN-3b4" firstAttribute="top" secondItem="NbF-8z-GCi" secondAttribute="bottom" constant="30" id="Jaf-i9-lRf"/>
+                            <constraint firstItem="gkB-vF-Kyj" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="T2J-Ge-NiK"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="NbF-8z-GCi" secondAttribute="trailing" constant="85" id="b3i-rx-Dgy"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="ox1-vA-9gB" secondAttribute="bottom" constant="15" id="bee-h0-XBA"/>
+                            <constraint firstItem="NbF-8z-GCi" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="nb6-cS-Fwy"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="Cac-FN-3b4" secondAttribute="trailing" constant="25" id="oMo-p8-ubw"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="Cac-FN-3b4" secondAttribute="bottom" constant="84" id="pZO-Gl-FqL"/>
+                            <constraint firstItem="NbF-8z-GCi" firstAttribute="top" secondItem="gkB-vF-Kyj" secondAttribute="bottom" constant="50" id="pnk-1s-hXQ"/>
+                            <constraint firstItem="NbF-8z-GCi" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="85" id="qEI-Zc-TFm"/>
+                            <constraint firstItem="ox1-vA-9gB" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" constant="20" id="syk-zU-6sy"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="gkB-vF-Kyj" secondAttribute="trailing" constant="20" id="vEM-GF-LkA"/>
+                            <constraint firstItem="ox1-vA-9gB" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="y8T-rG-sVQ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="labelGoldNumber" destination="4HH-18-iPx" id="ih6-Kd-oke"/>
+                        <outlet property="labelNumber" destination="1xB-lk-WXs" id="RGV-Zy-uBI"/>
+                        <outlet property="stepper" destination="Mf8-xt-mjk" id="ebi-XZ-7c3"/>
+                        <outlet property="textViewResult" destination="Cac-FN-3b4" id="3VF-LD-dig"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="749.60000000000002" y="359.85221674876851"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -183,6 +230,9 @@ VGhpcmQQEA
         <image name="first" width="30" height="30"/>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
         <image name="second" width="30" height="30"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

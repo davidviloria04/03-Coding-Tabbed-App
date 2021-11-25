@@ -45,7 +45,25 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func validateData(_ sender: UIButton) {
         
-        if userName == "David Enrique"{
+        let shouldEnterTheParty =  (userName == "David Viloria") || (userAge >= 18)
+        
+        if shouldEnterTheParty{
+            self.view.backgroundColor = .yellow
+            let alertName = UIAlertController(title: "خوش آمدی",
+                                              message: "Bienvenido a la fiesta",
+                                              preferredStyle: .alert)
+            alertName.addAction(UIAlertAction(title: "Ok", style: .default))
+            self.present(alertName, animated: true)
+        }else{
+            self.view.backgroundColor = .red
+            let alertNo = UIAlertController(title: "Yoy shall not pass",
+                                            message: "Gandalf no te deja pasar",
+                                            preferredStyle: .alert)
+            alertNo.addAction(UIAlertAction(title: "Ok", style: .default))
+            self.present(alertNo, animated: true)
+
+        }
+        /*if userName == "David Enrique"{
             
             self.view.backgroundColor = .yellow
             let alertName = UIAlertController(title: "خوش آمدی",
@@ -59,12 +77,10 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
         }else if userAge >= 18{
             
             self.view.backgroundColor = .green
-
             let alertAge =  UIAlertController(title: "Puedes entrar \(userName)",
                                               message: "Eres mayor de edad",
                                               preferredStyle: .alert)
             alertAge.addAction(UIAlertAction(title: "Ok", style: .default))
-
             self.present(alertAge, animated: true)
             
             
@@ -75,9 +91,8 @@ class FirstViewController: UIViewController, UITextFieldDelegate{
                                             message: "Gandalf no te deja pasar",
                                             preferredStyle: .alert)
             alertNo.addAction(UIAlertAction(title: "Ok", style: .default))
-
             self.present(alertNo, animated: true)
-        }
+        }*/
     }
     
     func updateUserAge(){

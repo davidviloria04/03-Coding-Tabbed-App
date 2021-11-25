@@ -27,9 +27,9 @@ class SecondViewController: UIViewController {
     }
     
     func generateFibonacciNumbers() {
-        if fibID <= 1 || fibID > 100{
-            return
-        }
+//        if fibID <= 1 || fibID > 100{
+//            return
+//        }
         
         //Generar los numeros de fibonacci hasta el Fib
         fibonacci = [0,1]
@@ -45,7 +45,6 @@ class SecondViewController: UIViewController {
     
     @IBAction func stepperPresedd(_ sender: UIStepper) {
         
-        //self.fibID  = Int(sender.value)
         updateLabel(id: Int(sender.value))
     }
     
@@ -57,9 +56,7 @@ class SecondViewController: UIViewController {
     }
     
     func calculatedGoldNumber(){
-        if self.wantsGoldNumber {
-            //Hay que generar el numero de oro como cociente entre los dos ultimos numeros de Fibonacci
-            
+        if (wantsGoldNumber) {
             let last = Double(fibonacci[fibonacci.count-1])
             let previousLast = Double(fibonacci[fibonacci.count-2])
             let goldNumber = last / previousLast
@@ -76,6 +73,7 @@ class SecondViewController: UIViewController {
         self.fibID = id
         self.labelNumber.text = "\(self.fibID)"
         generateFibonacciNumbers()
+        calculatedGoldNumber()
     }
     
 }

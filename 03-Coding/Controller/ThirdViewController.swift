@@ -43,6 +43,7 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell =  tableView.dequeueReusableCell(withIdentifier: "FontFamilyCell", for: indexPath)
         let fontFamily = families[indexPath.row]
         cell.textLabel?.text = fontFamily
+        cell.textLabel?.font = UIFont(name: fontFamily, size: 18.0)
         return cell
     }
     

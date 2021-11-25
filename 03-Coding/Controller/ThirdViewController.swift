@@ -8,8 +8,12 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+    
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var families: [String] = []
     var fonts: [String : [String]] = [:]
@@ -22,6 +26,23 @@ class ThirdViewController: UIViewController {
         }
 
         // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - Métodos del protocolo UIViewDataSource
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.families.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell =  tableView.dequeueReusableCell(withIdentifier: "FontFamilyCell", for: indexPath)
+        cell.textLabel?.text = families[indexPath.row]
+        return cell
     }
     
 }

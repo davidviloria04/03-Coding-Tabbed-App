@@ -17,6 +17,7 @@ class SecondViewController: UIViewController {
     
     var fibonacci: [Int] = [0,1]
     var fibID = 1
+    var wantsGoldNumber = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +51,13 @@ class SecondViewController: UIViewController {
     
     @IBAction func switchMoved(_ sender: UISwitch) {
         
-        if sender.isOn {
+        self.wantsGoldNumber = sender.isOn
+        calculatedGoldNumber()
+    
+    }
+    
+    func calculatedGoldNumber(){
+        if self.wantsGoldNumber {
             //Hay que generar el numero de oro como cociente entre los dos ultimos numeros de Fibonacci
             
             let last = Double(fibonacci[fibonacci.count-1])

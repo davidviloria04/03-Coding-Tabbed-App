@@ -41,7 +41,8 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell =  tableView.dequeueReusableCell(withIdentifier: "FontFamilyCell", for: indexPath)
-        cell.textLabel?.text = families[indexPath.row]
+        let fontFamily = families[indexPath.row]
+        cell.textLabel?.text = fontFamily
         return cell
     }
     

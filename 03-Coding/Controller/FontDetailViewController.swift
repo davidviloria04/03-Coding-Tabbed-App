@@ -24,6 +24,14 @@ class FontDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
         self.labelTitle.font = UIFont(name: familyName, size: 16)
 
         // Do any additional setup after loading the view.
+        
+        self.pickerFonts.dataSource = self
+        self.pickerFonts.delegate = self
+        
+        
+//        if fonts.count == 0{
+//            self.pickerFonts.isHidden = true
+//        }
     }
     
 
@@ -45,6 +53,10 @@ class FontDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.fonts.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return fonts[row]
     }
 
 }

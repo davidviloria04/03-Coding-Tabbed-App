@@ -11,8 +11,6 @@ import UIKit
 class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    
-    
     @IBOutlet weak var tableView: UITableView!
     
     var families: [String] = []
@@ -26,6 +24,17 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowFontsForFamily"{
+            let destinationViewController = segue.destination as! FontDetailViewController
+            let idx = self.tableView.indexPathForSelectedRow!.row // Constante para saber cual fila es seleccionada
+            destinationViewController.familyName = self.families[idx]
+            destinationViewController.fonts = self.fonts[self.families[idx]]!
+            
+        }
     }
     
     // MARK: - Métodos del protocolo UIViewDataSource
@@ -47,4 +56,13 @@ class ThirdViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
+    // MARK: - Métodos del protocolo UIViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let fontFamily = families[row]
+        let familyFonts = fonts[fontFamily]!
+        print(fontFamily)
+        print(familyFonts as Any)
+    }
 }

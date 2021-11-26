@@ -32,6 +32,8 @@ class FontDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
 //        if fonts.count == 0{
 //            self.pickerFonts.isHidden = true
 //        }
+        
+        self.textView.font = UIFont(name: familyName, size: 14)
     }
     
 
@@ -58,5 +60,13 @@ class FontDetailViewController: UIViewController, UIPickerViewDelegate, UIPicker
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return fonts[row]
     }
+    
+    //MARK: - Métodos del protocolo UIPickerViewDelegate
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let font = fonts[row]
+        self.textView.font = UIFont(name: font, size: 14)
+    }
 
 }
+ 
